@@ -1,0 +1,80 @@
+option TypesOutput = "network/types.luau"
+option ServerOutput = "network/server.ts"
+option ClientOutput = "network/client.ts"
+
+option PromiseLibrary = "ReplicatedStorage.rbxts_include.Promise"
+
+option UsePolling = false
+option Typescript = true
+option Casing = Camel
+
+scope DataStore {
+    scope Player {
+        struct Default {
+            totalClicks: u8(0..),
+            currencies: struct {
+                money: u32,
+            },
+        }
+
+        struct Patch {
+            totalClicks: u8(0..)?,
+            currencies: struct {
+                money: u32,
+            }?,
+        }
+    }
+}
+
+scope Atoms {
+    map PlayerMap = { [string]: DataStore.Player.Default}
+    map PlayerPatchMap = { [string]: DataStore.Player.Patch}
+
+    enum PayloadSync = "type" {
+        init {
+            data: struct {
+                players: PlayerMap
+            }
+        },
+        patch {
+            data: struct {
+                players: PlayerPatchMap
+            }
+        }
+    }
+
+    enum MoneyUnion = "type" {
+        click {
+            value: enum {
+                one,
+                ten
+            }
+        }
+    }
+
+    enum CategoryPayload = "type" {
+        money {
+            action: MoneyUnion
+        }
+    }
+
+     event update {
+        From: Client,
+        Type: Unreliable,
+        Call: ManySync,
+        Data: CategoryPayload
+    }
+
+    event sync {
+        From: Server,
+        Type: Reliable,
+        Call: SingleSync,
+        Data: PayloadSync
+    }
+
+    event init {
+        From: Client,
+        Type: Reliable,
+        Call: SingleSync,
+    }
+}

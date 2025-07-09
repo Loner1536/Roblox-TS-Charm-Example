@@ -1,0 +1,23 @@
+{
+	"files.eol": "\n",
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true
+	},
+	"eslint.run": "onType",
+	"eslint.format.enable": true,
+	"typescript.tsdk": "node_modules/typescript/lib",
+
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.profiles.linux": {
+		"zsh": {
+			"path": "/bin/zsh",
+			"args": ["-l"]
+		}
+	},
+	"stylua.targetReleaseVersion": "latest"
+}

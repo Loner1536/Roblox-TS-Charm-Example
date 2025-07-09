@@ -1,0 +1,14 @@
+/node_modules
+/out
+/dist
+/include
+/network
+*.tsbuildinfo
+flamework.build
+*.luau
+*.lua
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+sourcemap.json

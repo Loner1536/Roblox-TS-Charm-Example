@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "bash ./scripts/shell/build.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Dev",
+      "type": "shell",
+      "command": "zsh ./scripts/shell/dev.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Install Packages",
+      "type": "shell",
+      "command": "zsh ./scripts/shell/install-packages.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Compile Network",
+      "type": "shell",
+      "command": "zsh ./scripts/shell/compile-network.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "zsh ./scripts/shell/test.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    }
+  ]
+}

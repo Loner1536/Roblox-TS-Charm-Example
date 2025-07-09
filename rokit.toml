@@ -1,0 +1,8 @@
+[tools]
+blink = "1Axen/blink@0.17.4"
+lune = "lune-org/lune@0.9.4"
+rojo = "rojo-rbx/rojo@7.5.1"
+luau-lsp = "JohnnyMorganz/luau-lsp@1.51.0"
+darklua = "daemon6109/darklua@0.16.1"
+selene = "Kampfkarren/selene@0.28.0"
+stylua = "JohnnyMorganz/StyLua@2.1.0"
