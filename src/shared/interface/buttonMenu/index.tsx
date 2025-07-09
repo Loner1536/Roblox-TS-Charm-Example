@@ -107,7 +107,7 @@ export function BottomMenuContainer({ props }: { props: Types.InterfaceProps.def
 							: sharedConstants.gradients.red.regular;
 					}}
 					onRelease={() => {
-						if (props.playerData.totalClicks() > 10)
+						if (props.playerData.totalClicks() >= 10)
 							props.network.update.fire({
 								type: "money",
 								action: {

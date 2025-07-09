@@ -11,7 +11,7 @@ export default function (
 	let errorTag: string | undefined;
 
 	const success = store.updateAsync(player, (data) => {
-		if (data.totalClicks < 10) {
+		if (data.totalClicks <= 10) {
 			errorTag = "Requirement";
 			return false;
 		}
