@@ -3,7 +3,7 @@
 This is an **example Roblox-TS project** demonstrating a modern and reactive game architecture using:
 
 - 🧠 [Charm](https://www.npmjs.com/package/@rbxts/charm) — atomic & immutable state management
-- 🔁 [Charm Sync](https://www.npmjs.com/package/@rbxts/charm-sync/v/0.3.0) — sync charm client -> server
+- 🔁 [Charm Sync](https://www.npmjs.com/package/@rbxts/charm-sync/v/0.3.0) — Sync charm Client -> Server
 - 🎨 [Vide](https://www.npmjs.com/package/@rbxts/vide) — reactive UI framework for Roblox
 - 🧾 [Lyra](https://www.npmjs.com/package/@rbxts/lyra) — safe & simple player data management
 - 🧰 [Flamework](https://www.npmjs.com/package/@flamework/core) — app structure & networking
@@ -17,7 +17,7 @@ This is an **example Roblox-TS project** demonstrating a modern and reactive gam
 | Package                         | Role                                             |
 |----------------------------------|--------------------------------------------------|
 | [`@rbxts/charm`](https://www.npmjs.com/package/@rbxts/charm)         | Reactive state management                      |
-| [`@rbxts/charm-sync`](https://www.npmjs.com/package/@rbxts/charm-sync/v/0.3.0) | sync charm client -> server       |
+| [`@rbxts/charm-sync`](https://www.npmjs.com/package/@rbxts/charm-sync/v/0.3.0) | Sync charm Client -> Server       |
 | [`@rbxts/vide`](https://www.npmjs.com/package/@rbxts/vide)           | Reactive UI layer                              |
 | [`@rbxts/lyra`](https://www.npmjs.com/package/@rbxts/lyra)           | Player data saving/loading                     |
 | [`@flamework/core`](https://www.npmjs.com/package/@flamework/core)   | App architecture, services, DI, networking     |
