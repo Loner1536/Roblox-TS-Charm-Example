@@ -30,11 +30,11 @@ export function BottomMenuContainer({ props }: { props: Types.InterfaceProps.def
 			AnchorPoint={new Vector2(0.5, 1)}
 			Position={px.spring(
 				(scale) => {
-					const yOffset = props.bottomMenu.visible() ? 0 : 150;
+					const yOffset = props.bottomMenu.visible() ? 0 : 250;
 					return scale.uDim2(0.5, 0, 1, yOffset);
 				},
 				0.25,
-				0.75,
+				0.5,
 			)}
 			Size={px.uDim2(800, 200)}
 		>
@@ -64,7 +64,7 @@ export function BottomMenuContainer({ props }: { props: Types.InterfaceProps.def
 					size={(onHover, onPress) => {
 						return px.spring(
 							(scale) => {
-								const multi = onPress() ? 1.05 : onHover() ? 1.1 : 1;
+								const multi = onPress() ? 1.025 : onHover() ? 1.075 : 1;
 								return scale.uDim2(350 * multi, 150 * multi);
 							},
 							0.25,
@@ -91,7 +91,7 @@ export function BottomMenuContainer({ props }: { props: Types.InterfaceProps.def
 					size={(onHover, onPress) => {
 						return px.spring(
 							(scale) => {
-								const multi = onPress() ? 1.05 : onHover() ? 1.1 : 1;
+								const multi = onPress() ? 1.025 : onHover() ? 1.075 : 1;
 								return scale.uDim2(350 * multi, 150 * multi);
 							},
 							0.25,
@@ -101,15 +101,20 @@ export function BottomMenuContainer({ props }: { props: Types.InterfaceProps.def
 					text={"10"}
 					textSize={px.number(32)}
 					fontFace={sharedConstants.fonts.current.regular}
-					color={sharedConstants.gradients.green.regular}
+					color={() => {
+						return props.playerData.totalClicks() > 10
+							? sharedConstants.gradients.green.regular
+							: sharedConstants.gradients.red.regular;
+					}}
 					onRelease={() => {
-						props.network.update.fire({
-							type: "money",
-							action: {
-								type: "click",
-								value: "ten",
-							},
-						});
+						if (props.playerData.totalClicks() > 10)
+							props.network.update.fire({
+								type: "money",
+								action: {
+									type: "click",
+									value: "ten",
+								},
+							});
 					}}
 				/>
 				<uilistlayout

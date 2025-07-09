@@ -17,6 +17,7 @@ import interfaceProps from "client/controllers/interface/props";
 
 // Dependencies
 import currencies from "client/controllers/interface/playerData/currencies";
+import totalClicks from "@controllers/interface/playerData/totalClicks";
 import filters from "server/services/dataStore/filters";
 import template from "./template";
 
@@ -36,6 +37,7 @@ export default function (props: InferVideProps<{}>, callback: (interfaceProps: T
 	const playerData = table.clone(template);
 
 	interfaceProps.playerData = {
+		totalClicks: totalClicks(mockedPlayer),
 		currencies: currencies(mockedPlayer),
 	};
 

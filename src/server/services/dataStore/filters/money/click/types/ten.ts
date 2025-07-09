@@ -11,7 +11,6 @@ export default function (
 	let errorTag: string | undefined;
 
 	const success = store.updateAsync(player, (data) => {
-		print("10");
 		if (data.totalClicks < 10) {
 			errorTag = "Requirement";
 			return false;
@@ -24,9 +23,9 @@ export default function (
 
 	if (!success) {
 		if (errorTag === "Requirement") {
-			warn("⚠️ Not enough total clicks\n", error);
+			warn("⚠️ Not enough total clicks");
 		} else {
-			warn("⚠️ Unknown error:", error);
+			warn("⚠️ Unknown error:");
 		}
 	}
 }

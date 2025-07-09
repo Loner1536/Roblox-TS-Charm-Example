@@ -17,7 +17,7 @@ import { ForgeLobby } from "./lobby";
 const player = Players.LocalPlayer;
 const playerGui = player.WaitForChild("PlayerGui");
 
-const { create, mount } = Vide;
+const { mount } = Vide;
 
 @Controller({
 	loadOrder: 1,
@@ -29,10 +29,11 @@ export class Interface implements OnStart {
 				px.setTarget(Workspace.CurrentCamera!);
 
 				interfaceProps.playerData = {
+					totalClicks: playerData.totalClicks(player),
 					currencies: playerData.currencies(player),
 				};
 
-				return;
+				task.defer(interfaceProps.bottomMenu.visible, true);
 
 				return <ForgeLobby props={interfaceProps} />;
 			},

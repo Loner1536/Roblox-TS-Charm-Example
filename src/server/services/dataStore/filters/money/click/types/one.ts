@@ -11,17 +11,12 @@ export default function (
 	let errorTag: string | undefined;
 
 	const success = store.updateAsync(player, (data) => {
-		print("1");
 		data.currencies.money += 1;
 		if (transformFunction) transformFunction(data);
 		return true;
 	});
 
 	if (!success) {
-		if (errorTag === "NoAmountGiven") {
-			warn("⚠️ No amount given\n", error);
-		} else {
-			warn("⚠️ Unknown error:", error);
-		}
+		warn("⚠️ Unknown error:");
 	}
 }

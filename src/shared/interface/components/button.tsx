@@ -63,7 +63,9 @@ export function Button({ name, anchorPoint, position, size, text, textSize, font
 				<uicorner CornerRadius={px.uDim(10)} />
 			</textbutton>
 			<uigradient Color={color} Rotation={90} />
-			<uistroke Thickness={px.number(3)} Color={Color3.fromRGB(255, 255, 255)} Transparency={0.5} />
+			<uistroke Thickness={px.number(6)} Color={Color3.fromRGB(150, 150, 150)}>
+				<uigradient Color={color} Rotation={90} />
+			</uistroke>
 			<uicorner CornerRadius={px.uDim(10)} />
 		</frame>
 	);
